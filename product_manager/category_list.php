@@ -1,4 +1,7 @@
 <?php include '../view/header.php'; ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
+<script src="scripts/categoryList.js"></script>
 <main>
 
     <h1>Category List</h1>
@@ -14,13 +17,13 @@
 
     <h2>Add Category</h2> 
     <form id='addCategory'>
-            
+            <label>Category Name:</label>
+            <input type='text' name='category_name' />
+            <input type="button" value="Add" id="addCategory" />
             </form>
     
     <p><a href="index.php?action=list_products">List Products</a></p>
 
 </main>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
-<script src="scripts/categoryList.js"></script>
+
 <?php include '../view/footer.php'; ?>

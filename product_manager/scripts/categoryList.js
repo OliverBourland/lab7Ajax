@@ -5,7 +5,8 @@ var newCategoryName;
 
 function setupPage() {
 	getCategories();
-	createAddCategory();
+	var addCategory = document.forms[0].elements.namedItem("addCategory");
+	addCategory.onclick = createCategory;
 }
 
 function getCategories(){		
@@ -28,14 +29,14 @@ function createCategoryTable(categories) {
 		toastr.info('There are no categories!') 
 }
 
-function createAddCategory() {
-	$("form#addCategory").append("<label>Category Name:</label>" + "<input type='text' name='categoryname' />" +
-	"<button href='?action=list_categories' class='addCategory'>Add</button>");
-	$("button.addCategory").click(addCategory);
-}
+// function createAddCategory() {
+// 	$("form#addCategory").append("<label>Category Name:</label>" + "<input type='text' name='categoryname' />" +
+// 	"<button href='?action=list_categories' class='addCategory'>Add</button>");
+// 	$("button.addCategory").click(addCategory);
+// }
 
-function addCategory() {
-	newCategoryName = document.forms[0].elements.namedItem("categoryname").value;
+function createCategory() {
+	newCategoryName = document.forms[0].elements.namedItem("category_name").value;
 	addurl = url + "?action=addCategory";
 	$.post(addurl, {category_name: newCategoryName})
 		.done(createCategoryTable)

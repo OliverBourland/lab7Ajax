@@ -79,7 +79,7 @@ try
 		}
 	}
 	else if ($action == 'add_category') {
-		$name = filter_input(INPUT_POST, 'name');
+		$name = filter_input(INPUT_POST, 'category_name');
 		if ($name == NULL || $name == false) {
 			$error = "Invalid category name. Try again.";
 			include('../errors/error.php');
